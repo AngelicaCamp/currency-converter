@@ -1,7 +1,6 @@
 const apiKey = '44675869a7055517b9b35f83'
 const baseURL = `https://v6.exchangerate-api.com/v6/${apiKey}`
 
-//const url = `https://v6.exchangerate-api.com/v6/${apiKey}/codes`
 
 const fetchDataApi = async url => {
     return await fetch(url)
