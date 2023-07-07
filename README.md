@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="#" target="_blank">
-    <img src="weather-app.gif"> 
+    <img src="currency-converter.gif"> 
   </a>   
 </div>
 
