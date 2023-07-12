@@ -3,9 +3,23 @@ const baseURL = `https://v6.exchangerate-api.com/v6/${apiKey}`
 
 
 const fetchDataApi = async url => {
-    return await fetch(url)
-                    .then(res => res.json())
-                    .catch(console.error)
+    try {
+        const response = await fetch(url)
+
+        if (!response.ok){
+            throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+        }
+
+        const data = await response.json()
+
+        if (fetchDataApi.result === 'error'){
+            throw new Error(getErrorMessage(data['error-type']))
+        }
+        return data
+
+    } catch (err){
+        showAlertMensageError(err.message)
+    }
 }
 
 
